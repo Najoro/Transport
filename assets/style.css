@@ -1,9 +1,9 @@
-.active {
+.active-link {
     background: #b3c9ec4a !important;
     position: relative;
 }
 
-.active::after {
+.active-link::after {
     content: "";
     position: absolute;
     right: -1.1rem;
@@ -14,11 +14,11 @@
     background: blue;
 }
 
-.active a {
+.active-link a {
     color: blue !important;
 }
 
-.active-car .card-body{
+.active-car {
     background: #3F8CFF !important;
     color: white !important;
 }

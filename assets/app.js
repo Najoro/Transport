@@ -1,4 +1,3 @@
-// import Gestion from "./js/Gestion";
 
 $(document).ready(function(){
     Menu.toogle();
@@ -16,8 +15,8 @@ $(document).ready(function(){
         {date: '16h - 18h', hotel: 'Ibis', nom: 'Solo', adresse: '12 rue de Mahamasina', contact: '0340123456'},
         {date: '17h - 19h', hotel: 'Hilton', nom: 'Lova', adresse: '89 avenue de l’Amitié', contact: '0341234567'}
     ]
-    Gestion.carCarousel();
-    Gestion.carActive();
+    Car.carousel();
+    Car.active();
     Gestion.autoGeneratePersonnel(data);
     Gestion.addPersonelManual();
     Gestion.autoDistribution();
@@ -77,53 +76,7 @@ const File = {
 
 
 const Gestion = {
-    carCarousel : function(){
-        $("#cars").slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            // prevArrow: '<button class="btn btn-primary"><i class="fa fa-chevron-left"></i></button>',
-            // nextArrow: '<button class="btn btn-primary slick-btn-next"><i class="fa fa-chevron-right"></i></button>',
 
-            responsive: [
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  infinite: true,
-                  dots: true
-                }
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-                }
-              }
-            ]
-          });
-        
-    },
-    // carActive : function() {
-        
-    //     $('body').on('click', '.car', function() {
-    //         alert('test')
-            
-    //         // $('.car').removeClass('active-car');
-    //         // $(this).addClass('active-car');
-    //     })
-    // },
 
     autoGeneratePersonnel : function(data) {
        const listPersonel = $('#personel-list');
@@ -173,4 +126,52 @@ const Gestion = {
            $($target).modal('show');
         })
     }
+}
+
+const Car = {
+    carousel : function(){
+        $("#cars").slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+          });
+        
+    },
+
+    active : function() {
+       $('body').on('click', '.card-car', function() {
+            $this = $(this);
+            $('.card-car').removeClass('active-car');
+
+            $this.addClass('active-car');
+       })
+    },
 }

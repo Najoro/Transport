@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
         integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
@@ -75,7 +76,7 @@
                 </div>
 
 
-                <div class="p-3 m-1 rounded-4 active">
+                <div class="p-3 m-1 rounded-4 active-link">
                     <a href="./gestion.html" class="text-decoration-none" style="color:#7D8592">
                         <div class="row d-flex justify-content-start align-items-center">
                             <div class="w-auto">
@@ -322,90 +323,68 @@
                 </div>
                 <div class="col-12 col-lg-8 rounded-4">
                     <div class="row mb-3 d-flex">
-                        
-                        <div class="col-12 col-md-3 mb-3 " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                            <button class="btn bg-white rounded-5 p-1 w-100 col-12 col-md-3 mb-3">
-                                <div class="p-2 px-3 rounded-5" style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 1</h4>
-                                    <p>Analakely - Mahazo</p>
+
+                        <div class="col-12">
+                            <div class="nav nav-pills d-flex flex-wrap" role="tablist" id="cars">
+                                <!--Voiture 1-->
+                                <div class="col-12 col-md-3 mb-3" role="presentation">
+                                    <button class="nav-link active bg-white rounded-5 p-1 w-100" id="v-pills-voiture1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-voiture1" type="button" role="tab" aria-controls="v-pills-voiture1" aria-selected="true">
+                                        <div class="p-2 px-3 rounded-5 active-car card-car" style="background: #F4F9FD;">
+                                            <h4 class="m-0">Voiture 1</h4>
+                                            <p>Analakely - Mahazo</p>
+                                        </div>
+                                    </button>
                                 </div>
-                            </button>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3 ">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 2</h4>
-                                    <p>Analakely - Mahazo</p>
+                                
+                                <!--Voiture 2-->
+                                <div class="col-12 col-md-3 mb-3" role="presentation">
+                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-voiture2" type="button" role="tab" aria-controls="v-pills-voiture2" aria-selected="false">
+                                        <div class="p-2 px-3 rounded-5 card-car" style="background: #F4F9FD;">
+                                            <h4 class="m-0">Voiture 2</h4>
+                                            <p>Analakely - Mahazo</p>
+                                        </div>
+                                    </button>
                                 </div>
+
+                                <!--Voiture 3-->
+                                <div class="col-12 col-md-3 mb-3" role="presentation">
+                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-voiture3" type="button" role="tab" aria-controls="v-pills-voiture3" aria-selected="false">
+                                        <div class="p-2 px-3 rounded-5 card-car" style="background: #F4F9FD;">
+                                            <h4 class="m-0">Voiture 3</h4>
+                                            <p>Analakely - Mahazo</p>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <!--Voiture 4-->
+                                <div class="col-12 col-md-3 mb-3" role="presentation">
+                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-voiture4" type="button" role="tab" aria-controls="v-pills-voiture4" aria-selected="false">
+                                        <div class="p-2 px-3 rounded-5 card-car" style="background: #F4F9FD;">
+                                            <h4 class="m-0">Voiture 4</h4>
+                                            <p>Analakely - Mahazo</p>
+                                        </div>
+                                    </button>
+                                </div>
+                                
+                                <!--Voiture 5-->
+                                <div class="col-12 col-md-3 mb-3" role="presentation">
+                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-voiture5" type="button" role="tab" aria-controls="v-pills-voiture4" aria-selected="false">
+                                        <div class="p-2 px-3 rounded-5 card-car" style="background: #F4F9FD;">
+                                            <h4 class="m-0">Voiture 5</h4>
+                                            <p>Analakely - Mahazo</p>
+                                        </div>
+                                    </button>
+                                </div>
+                                
                             </div>
                         </div>
-                        <div class="col-12 col-md-3 mb-3 ">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 3</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 4</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 5</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 6</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3 ">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 7</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3 ">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 8</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 9</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3 mb-3 ">
-                            <div class="card bg-white rounded-5 p-1 border-0 car">
-                                <div class="card-body text-center p-2 rounded-5 border-0 " style="background: #F4F9FD;">
-                                    <h4 class="m-0">Voiture 10</h4>
-                                    <p>Analakely - Mahazo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <!-- <div class="row">
+                        <!-- Contenu des onglets -->
+                        <div class="col-12">
+                            <div class="tab-content">
+                                <!-- Contenu Voiture 1 -->
+                                <div class="tab-pane fade show active" id="v-pills-voiture1" role="tabpanel" aria-labelledby="v-pills-voiture1-tab">
+                                     <div class="row">
                         <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal"
                             data-target="#add-personel">
                             <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center"
@@ -674,7 +653,1038 @@
                                 <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                                </div>
+                    
+                                <!-- Contenu Voiture 2 -->
+                                <div class="tab-pane fade" id="v-pills-voiture2" role="tabpanel" aria-labelledby="v-pills-voiture2-tab">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center"
+                                                style="min-height: 140px;">
+                                                <div class="">
+                                                    <h3 class="m-0 mb-2 p-0">Patrick</h3>
+                                                    <p class="opacity-50">Chauffeur</p>
+                                                    <span class="d-flex align-items-center gap-1">
+                                                        <p class="m-0 text-secondary fw-bold p-2 rounded-3"
+                                                            style="background: #F4F9FD;">106
+                                                        </p>
+                                                        <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                        <i class="bi bi-arrow-down fs-4 color-green"></i>
+                                                    </span>
+                                                </div>
+                                                <img src="./assets/image/volant.png" alt="" class="opacity-50"
+                                                    style="width: 100px; height: 100px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Contenu Voiture 3 -->
+                                <div class="tab-pane fade" id="v-pills-voiture3" role="tabpanel" aria-labelledby="v-pills-voiture3-tab">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center"
+                                                style="min-height: 140px;">
+                                                <div class="">
+                                                    <h3 class="m-0 mb-2 p-0">Lova</h3>
+                                                    <p class="opacity-50">Chauffeur</p>
+                                                    <span class="d-flex align-items-center gap-1">
+                                                        <p class="m-0 text-secondary fw-bold p-2 rounded-3"
+                                                            style="background: #F4F9FD;">106
+                                                        </p>
+                                                        <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                        <i class="bi bi-arrow-down fs-4 color-green"></i>
+                                                    </span>
+                                                </div>
+                                                <img src="./assets/image/volant.png" alt="" class="opacity-50"
+                                                    style="width: 100px; height: 100px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Contenu Voiture 4 -->
+                                <div class="tab-pane fade" id="v-pills-voiture4" role="tabpanel" aria-labelledby="v-pills-voiture4-tab">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center"
+                                                style="min-height: 140px;">
+                                                <div class="">
+                                                    <h3 class="m-0 mb-2 p-0">Mamy</h3>
+                                                    <p class="opacity-50">Chauffeur</p>
+                                                    <span class="d-flex align-items-center gap-1">
+                                                        <p class="m-0 text-secondary fw-bold p-2 rounded-3"
+                                                            style="background: #F4F9FD;">106
+                                                        </p>
+                                                        <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                        <i class="bi bi-arrow-down fs-4 color-green"></i>
+                                                    </span>
+                                                </div>
+                                                <img src="./assets/image/volant.png" alt="" class="opacity-50"
+                                                    style="width: 100px; height: 100px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+                                                <h3 class="m-0 mb-2 p-0">Lucas</h3>
+                                                <p class="opacity-50">12 rue des Fleurs</p>
+                                                <span class="d-flex align-items-center gap-1">
+                                                    <p class="m-0 text-secondary fw-bold p-2 rounded-3" style="background: #F4F9FD;">106
+                                                    </p>
+                                                    <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                 <!-- Contenu Voiture 5 -->
+                                 <div class="tab-pane fade" id="v-pills-voiture5" role="tabpanel" aria-labelledby="v-pills-voiture5-tab">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center"
+                                                style="min-height: 140px;">
+                                                <div class="">
+                                                    <h3 class="m-0 mb-2 p-0">Koto</h3>
+                                                    <p class="opacity-50">Chauffeur</p>
+                                                    <span class="d-flex align-items-center gap-1">
+                                                        <p class="m-0 text-secondary fw-bold p-2 rounded-3"
+                                                            style="background: #F4F9FD;">106
+                                                        </p>
+                                                        <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                                                        <i class="bi bi-arrow-down fs-4 color-green"></i>
+                                                    </span>
+                                                </div>
+                                                <img src="./assets/image/volant.png" alt="" class="opacity-50"
+                                                    style="width: 100px; height: 100px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                         <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
+                                            data-target="#add-personel">
+                                            <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+                                                style="min-height: 140px;  border-style:dashed;">
+                                                <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+                                                <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
                 </div>
             </div>
         </div>
@@ -951,6 +1961,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
         integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/app.js"></script>
 </body>
 
