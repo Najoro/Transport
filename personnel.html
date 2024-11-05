@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>G Transpers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+        integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body class="position-relative" style="height: 100vh; background:#F4F9FD;">
+    
+    <div class="row g-0 m-3">
+        <nav class="col">
+            <button id="btn-toogle-menu" class="btn btn-primary position-fixed fs-1 d-block d-xl-none" style="z-index: 1000; top: 20px;right:20px">
+                <i class="bi bi-list"></i>
+            </button>
+            <div id="menu" class="position-fixed p-3 bg-white rounded-5 border d-none d-xl-block" style="top: 20px; left:5px; bottom: 10px; z-index:1000;">
+                <div class="text-center my-4 pb-4 text-primary">
+                    <span class="fs-2 fw-bold">
+                        S.T.J.R
+                    </span>
+                </div>
+                <div class="p-3 m-1 rounded-4">
+                    <a href="./acceuil.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-house-door-fill"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Accueil</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="p-3 m-1 rounded-4 active">
+                    <a href="./personnel.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-people"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Personnel</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="p-3 m-1 rounded-4">
+                    <a href="./ligne.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-symmetry-vertical"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Ligne</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="p-3 m-1 rounded-4">
+                    <a href="./gestion.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-person-arms-up"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Gestion</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="p-3 m-1 rounded-4 ">
+                    <a href="./add_file.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-upload"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Upload fichier</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="p-3 m-1 rounded-4">
+                    <a href="./List_car.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-car-front"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Liste PERS/CAR</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="p-3 m-1 rounded-4">
+                    <a href="./planning.html" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-calendar"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Planning</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="p-3 m-1 rounded-4 position-absolute" style="bottom: 0;">
+                    <a href="#" class="text-decoration-none" style="color:#7D8592">
+                        <div class="row d-flex justify-content-start align-items-center">
+                            <div class="w-auto">
+                                <i class="fs-5 bi bi-box-arrow-right"></i>
+                            </div>
+                            <div class="w-auto">
+                                <span class="fw-bold">Déconnexion</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+        <div class="col-12 col-xl-10 p-3">
+            <div class="row d-flex justify-content-between flex-column flex-md-row">
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="ui left icon input col-12">
+                        <input type="text" class="border-0 p-3 rounded-4" placeholder="Recherche" style="min-width: 200px;">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+                <div class=" col-12 col-md-5 d-flex justify-content-between justify-content-md-end ">
+                    <button class="btn bg-white bt-md me-4 mx-md-4 ">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                    
+                    <div class="dropdown  bg-white rounded-2 d-flex justify-content-center align-items-center">
+                        <button class="btn btn-seondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="profile mx-1 rounded-5">
+                                <img src="./assets/image/photo2.png" alt="">
+                            </span>
+                            <span class="fw-bold">John Doe</span>
+                        </button>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Action 1</a></li>
+                            <li><a class="dropdown-item" href="#">Action 2</a></li>
+                            <li><a class="dropdown-item" href="#">Action 3</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="col-1 d-block d-xl-none" ></div>
+            </div>
+            <div class="row d-flex justify-content-between my-5 flex-column flex-lg-row">
+                <div class="col-12 col-md-4 mb-2">
+                    <h1>Personnel (28)</h1>
+                </div>
+                <div class="col-12 col-md-8 d-flex flex-wrap justify-content-start justify-content-lg-end">
+                    <button class="btn bg-white my-2 order-2 order-sm-0 m-1">
+                        <i class="bi bi-funnel"></i>
+                    </button>
+                    <button class="btn my-2 btn-outline-primary d-flex justify-content-center align-items-center m-1 rounded-4 btn-personal order-1 order-sm-2">
+                        <i class="bi me-2 bi-plus-lg"></i>
+                        <p class="m-0 p-0">Ajouter un personnel</p>
+                    </button>
+                    <button class="btn my-2 btn-primary d-flex px-5 rounded-4 justify-content-center align-items-center order-3 order-sm-3 m-1">
+                        <i class="bi bi-download"></i>
+                        <p class="mx-2">Exporter</p>
+                    </button>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-12">
+                        <div class="row rounded-3 p-3 bg-white me-2 rounded-4 d-flex flex-wrap flex-column flex-md-row position-relative gap-2">
+                            <div class="col-1 d-flex justify-content-md-center align-items-md-center">
+                                <img src="./assets/image/image.png" alt="" class="image-smal">
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1">Marie</h5>
+                                <p class="opacity-50">evanyates@gmail.com</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Matricule</h5>
+                                <p>101</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Hotel</h5>
+                                <p>Marriott</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Adresse</h5>
+                                <p>10 avenue de la Gare</p>
+                            </div>
+                            <div class="col-12 col-md-2 d-flex flex-row flex-md-column">
+                                <h5 class="m-1 opacity-50">Contact</h5>
+                                <p>0678901234</p>
+                            </div>
+                            <div class="col-1 d-flex justify-content-center align-items-center position-absolute" style="right: 10px; top:50%; transform:translateY(-50%);z-index:100;">
+                                <div class="dropdown">
+                                    <button class="btn btn-seondary rounded-5" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="background-color: #F4F9FD;">
+                                        <i class="bi bi-three-dots-vertical fs-5 opacity-50"></i>
+                                    </button>
+                                    <ul class="dropdown-menu bg-white" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Action 3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                            
+            </div>
+            <div class="pagiation">
+                <div class="d-flex justify-content-end align-items-center">
+                    <div class="bg-white d-flex justify-content-center align-items-center p-2 m-2 rounded-3">
+                        <p class="m-0 px-2">1-8 sur 28</p>
+                       <button class=" btn disable border-0 bg-white opacity-50">
+                            <i class="bi bi-arrow-left"></i>
+                       </button>
+                       <button class="btn border-0 bg-white text-primary">
+                            <i class="bi bi-arrow-right"></i>
+                       </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+        integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/app.js"></script>
+</body>
+
+</html>
