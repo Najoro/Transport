@@ -107,3 +107,6 @@ table{
     top: -30px;
     bottom: 0;
 }
+.use{
+    opacity: 0.4 !important;
+}

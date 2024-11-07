@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
+
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
@@ -353,53 +355,7 @@
                                     </button>
                                 </div> -->
 
-                                <!--Voiture 2-->
-                                <div class="col-12 col-md-3 mb-3" role="presentation">
-                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture2-tab"
-                                        data-bs-toggle="pill" data-bs-target="#v-pills-voiture2" type="button"
-                                        role="tab" aria-controls="v-pills-voiture2" aria-selected="false">
-                                        <div class="p-2 px-3 rounded-5 card-car text-dark" style="background: #F4F9FD;">
-                                            <h4 class="m-0">Voiture 2</h4>
-                                            <p>Analakely - Mahazo</p>
-                                        </div>
-                                    </button>
-                                </div>
 
-                                <!--Voiture 3-->
-                                <div class="col-12 col-md-3 mb-3" role="presentation">
-                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture3-tab"
-                                        data-bs-toggle="pill" data-bs-target="#v-pills-voiture3" type="button"
-                                        role="tab" aria-controls="v-pills-voiture3" aria-selected="false">
-                                        <div class="p-2 px-3 rounded-5 card-car text-dark" style="background: #F4F9FD;">
-                                            <h4 class="m-0">Voiture 3</h4>
-                                            <p>Analakely - Mahazo</p>
-                                        </div>
-                                    </button>
-                                </div>
-
-                                <!--Voiture 4-->
-                                <div class="col-12 col-md-3 mb-3" role="presentation">
-                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture4-tab"
-                                        data-bs-toggle="pill" data-bs-target="#v-pills-voiture4" type="button"
-                                        role="tab" aria-controls="v-pills-voiture4" aria-selected="false">
-                                        <div class="p-2 px-3 rounded-5 card-car text-dark" style="background: #F4F9FD;">
-                                            <h4 class="m-0">Voiture 4</h4>
-                                            <p>Analakely - Mahazo</p>
-                                        </div>
-                                    </button>
-                                </div>
-
-                                <!--Voiture 5-->
-                                <div class="col-12 col-md-3 mb-3" role="presentation">
-                                    <button class="nav-link bg-white rounded-5 p-1 w-100" id="v-pills-voiture5-tab"
-                                        data-bs-toggle="pill" data-bs-target="#v-pills-voiture5" type="button"
-                                        role="tab" aria-controls="v-pills-voiture4" aria-selected="false">
-                                        <div class="p-2 px-3 rounded-5 card-car text-dark" style="background: #F4F9FD;">
-                                            <h4 class="m-0">Voiture 5</h4>
-                                            <p>Analakely - Mahazo</p>
-                                        </div>
-                                    </button>
-                                </div>
 
                             </div>
                         </div>
@@ -1777,92 +1733,19 @@
                     </button>
                 </div>
                 <div class="modal-body border-0">
-                    <table id="table" class="table table-bordered  text-center" data-toggle="table"
-                        data-pagination="true" data-click-to-select="true">
+                    <table id="table-list-personnel" class="table table-bordered  text-center table-list-personnel" data-toggle="table"
+                        data-pagination="true" data-click-to-select="true" data-single-select="true">
                         <thead>
                             <tr>
                                 <th data-field="radio" data-checkbox="true">Sélection</th>
-                                <th data-field="heur">Heure Dépot/ <br> Ramassage</th>
-                                <th data-field="nom">Hotel</th>
+                                <th data-field="heure">Heure Dépot/ <br> Ramassage</th>
                                 <th data-field="nom">Nom</th>
+                                <th data-field="hotel">Hotel</th>
                                 <th data-field="adresse">Adresse</th>
                                 <th data-field="contact">Contact</th>
                             </tr>
                         </thead>
-                        <tbody class="opacity-50">
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
+                        <tbody class="opacity-75">
                         </tbody>
                     </table>
                 </div>
@@ -1888,7 +1771,7 @@
                                 Auto-Répartition
                             </button>
                         </div>
-                        <button type="button" class="btn btn-primary rounded-5">
+                        <button type="button" class="btn btn-primary rounded-5 add-maual-personnel">
                             <i class="bi bi-plus"></i>
                             Ajouter le personnel
                         </button>
@@ -1910,92 +1793,19 @@
                     </button>
                 </div>
                 <div class="modal-body border-0">
-                    <table id="table" class="table table-bordered  text-center" data-toggle="table"
+                    <table id="table" class="table table-bordered  text-center table-list-personnel" data-toggle="table"
                         data-pagination="true" data-click-to-select="true">
                         <thead>
                             <tr>
                                 <th data-field="radio" data-checkbox="true">Sélection</th>
-                                <th data-field="heur">Heure Dépot/ <br> Ramassage</th>
-                                <th data-field="nom">Hotel</th>
+                                <th data-field="heure">Heure Dépot/ <br> Ramassage</th>
                                 <th data-field="nom">Nom</th>
+                                <th data-field="hotel">Hotel</th>
                                 <th data-field="adresse">Adresse</th>
                                 <th data-field="contact">Contact</th>
                             </tr>
                         </thead>
                         <tbody class="opacity-50">
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>7h - 17h</td>
-                                <td>Mariott</td>
-                                <td>Sophie</td>
-                                <td>12 rue des Fleurs</td>
-                                <td>0678901234</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -2038,6 +1848,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
         integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+
     <script src="./assets/app.js"></script>
 </body>
 
