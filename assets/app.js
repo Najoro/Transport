@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   Menu.toogle();
   Menu.showTextMenu();
@@ -89,47 +88,90 @@ $(document).ready(function () {
     },
   ];
 
-  var dataCar = {
-    voiture: "Voiture 1",
-    trajet: "Analakely- Mahazo",
-    data: [
-      {id: 'c', personnel: { id: 1, name: "Vonjy", adresse: "67ha", point: "106" }},
-      {id: 'p1', personnel: { id: 1, date: "7h - 15h", hotel: "Carlton", nom: "Ando", adresse: "23 rue de l’Indépendance",contact: "0345678901",}},
-      {id: 'p2', personnel: { id: 1, date: "7h - 15h", hotel: "Carlton", nom: "Ando", adresse: "23 rue de l’Indépendance",contact: "0345678901",}},
-      {id: 'p3', personnel: { id: 3, date: "7h - 15h", hotel: "Carlton", nom: "Lova", adresse: "23 rue de l’Indépendance",contact: "0345678901",}},
-      {id: 'p4', personnel: { id: 4, date: "7h - 15h", hotel: "Carlton", nom: "koko", adresse: "23 rue de l’Indépendance",contact: "0345678901",}},
-      {id: 'p5', personnel: ""},
-      {id: 'p6', personnel: ""},
-      {id: 'p7', personnel: ""},
-      {id: 'p8', personnel: ""},
-      {id: 'p9', personnel: ""},
-      {id: 'p10', personnel: ""},
-      {id: 'p11', personnel: ""},
-      {id: 'p12', personnel: ""},
-      {id: 'p13', personnel: ""},
-      {id: 'p14', personnel: ""},
-      {id: 'p15', personnel: ""},
-      {id: 'p16', personnel: ""},
-      {id: 'p17', personnel: ""},
-      {id: 'p18', personnel: ""},
-      {id: 'p19', personnel: ""},
-      {id: 'p20', personnel: ""},
-      {id: 'p21', personnel: ""},
-      {id: 'p22', personnel: ""},
-    ],
-  };
-  
-  Car.headerDisplay(dataCar);
-  Car.DisplayContent(dataCar);
-  
-  Gestion.addPersonelManual(dataCar);
+  // var dataCar = {
+  //   voiture: "Voiture 1",
+  //   trajet: "Analakely- Mahazo",
+  //   data: [
+  //     {
+  //       id: "c",
+  //       personnel: { id: 1, name: "Vonjy", adresse: "67ha", point: "106" },
+  //     },
+  //     {
+  //       id: "p1",
+  //       personnel: {
+  //         id: 1,
+  //         date: "7h - 15h",
+  //         hotel: "Carlton",
+  //         nom: "Ando",
+  //         adresse: "23 rue de l’Indépendance",
+  //         contact: "0345678901",
+  //       },
+  //     },
+  //     {
+  //       id: "p2",
+  //       personnel: {
+  //         id: 1,
+  //         date: "7h - 15h",
+  //         hotel: "Carlton",
+  //         nom: "Ando",
+  //         adresse: "23 rue de l’Indépendance",
+  //         contact: "0345678901",
+  //       },
+  //     },
+  //     {
+  //       id: "p3",
+  //       personnel: {
+  //         id: 3,
+  //         date: "7h - 15h",
+  //         hotel: "Carlton",
+  //         nom: "Lova",
+  //         adresse: "23 rue de l’Indépendance",
+  //         contact: "0345678901",
+  //       },
+  //     },
+  //     {
+  //       id: "p4",
+  //       personnel: {
+  //         id: 4,
+  //         date: "7h - 15h",
+  //         hotel: "Carlton",
+  //         nom: "koko",
+  //         adresse: "23 rue de l’Indépendance",
+  //         contact: "0345678901",
+  //       },
+  //     },
+  //     { id: "p5", personnel: "" },
+  //     { id: "p6", personnel: "" },
+  //     { id: "p7", personnel: "" },
+  //     { id: "p8", personnel: "" },
+  //     { id: "p9", personnel: "" },
+  //     { id: "p10", personnel: "" },
+  //     { id: "p11", personnel: "" },
+  //     { id: "p12", personnel: "" },
+  //     { id: "p13", personnel: "" },
+  //     { id: "p14", personnel: "" },
+  //     { id: "p15", personnel: "" },
+  //     { id: "p16", personnel: "" },
+  //     { id: "p17", personnel: "" },
+  //     { id: "p18", personnel: "" },
+  //     { id: "p19", personnel: "" },
+  //     { id: "p20", personnel: "" },
+  //     { id: "p21", personnel: "" },
+  //     { id: "p22", personnel: "" },
+  //   ],
+  // };
 
+  // Car.headerDisplay(dataCar);
+  // Car.DisplayContent(dataCar);
+  
   Car.carousel();
   Car.active();
-
-  Gestion.generateTablePersonnel(data);
-  Gestion.autoGeneratePersonnel(data);
-  Gestion.autoDistribution();
+  
+  Personnel.autoDistribution();
+  Personnel.addManual();
+  Personnel.generateTable(data);
+  Personnel.autoGenerate(data);
+  Personnel.addIfChecked(data);
 });
 
 const Menu = {
@@ -180,8 +222,8 @@ const File = {
   },
 };
 
-const Gestion = {
-  autoGeneratePersonnel: function (data) {
+const Personnel = {
+  autoGenerate: function (data) {
     var $tablePersonel = $("#table-personnel");
     var dataTable = [
       //{card : html}
@@ -216,44 +258,32 @@ const Gestion = {
     });
   },
 
-  addPersonelManual: function(car) {
-    $("body").on("click", ".card-add-personel", function (e) {
+  addManual: function () {
+    $("body").on("click", ".card-add-personel", function () {
       $this = $(this);
+
       let newElement = {};
       const target = $this.data("target");
-      const idBlock = $this.data('id-block');
+      const idBlock = $this.data("id-block");
+
       $(target).modal("show");
-      
-      $('#table-list-personnel').on('check.bs.table', function(e,row, $element){
-        newElement = row        
-        const parent = $element.closest('tr');
+      const $table = $("#table-list-personnel");
 
-        $('.add-maual-personnel').on('click', function() {
-          const personnel = car.data.find(item => item.id == idBlock);
+      $table.on("check.bs.table", function (e, row, $element) {
+        newElement = row;
+        const parent = $element.closest("tr");
 
-          if(personnel){
-            personnel.personnel = newElement
-          }
+        $(".add-maual-personnel").on("click", function () {
 
-          $this.html(`
-              <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
-                  <h3 class="m-0 mb-2 p-0">${newElement.nom}</h3>
-                  <p class="opacity-50">${newElement.adresse}</p>
-                  <span class="d-flex align-items-center gap-1">
-                      <p class="m-0 text-secondary fw-bold p-2 rounded-3"
-                          style="background: #F4F9FD;">106
-                      </p>
-                      <i class="bi bi-arrow-up fs-4 color-yellow"></i>
-                  </span>
-              </div>
-          `)
-      
+          $this.html(Templante.newElementPeronnel(newElement));
 
-          $(target).modal('hide');      
-          parent.addClass('use')          
-        })
-      })
-        
+          $(target).modal("hide");
+          parent.addClass("use");
+
+          const index = $("#table-personnel").bootstrapTable("getData").indexOf(row);
+          $table.bootstrapTable("uncheck", index);
+        });
+      });
     });
   },
 
@@ -264,35 +294,49 @@ const Gestion = {
 
       $($target).modal("show");
     });
-
-
-    $('#table-personnel').on('check.bs.table', function() {
-      $.confirm({
-        title: 'Vous voulez ajoutez cette personne dans le voiture?',
-        content: 'Confirmer',
-        buttons: {
-            confirm: {
-              text: 'oui',
-              btnClass: 'btn-primary',
-              action: function(){
-                // $.alert('confirmer');
-              }
-            },
-            cancel: {
-                text: 'Non',
-                btnClass: 'btn-secondary',
-                action: function(){
-                    // $.alert('non');
-                }
-            }
-        }
-    });
-    })
   },
-  
-  generateTablePersonnel: function(data) {
-    $('.table-list-personnel').bootstrapTable('load', data)
-  }
+
+  addIfChecked : function(dataPersonnel) {
+    $table = $("#table-personnel");
+
+    // const $wrapper = $('#voiture1').find('[data-id-block="p5"]')
+    // console.log($wrapper);
+    
+    $table.on("check.bs.table", function (e, row, $element) {
+      const index = $("#table-personnel").bootstrapTable("getData").indexOf(row);
+      const rowChecked = $element.closest("tr").find('div');
+      const idRowChecked = rowChecked.data('id');
+      const personnel = dataPersonnel.find((item) => item.id == idRowChecked);
+      
+      $wrapper.html(Templante.newElementPeronnel(personnel));
+      
+      $.confirm({
+        title: "Vous voulez ajoutez cette personne dans le voiture?",
+        content: "Confirmer",
+        buttons: {
+          confirm: {
+            text: "oui",
+            btnClass: "btn-primary",
+            action: function () {
+              
+              $table.bootstrapTable("uncheck", index);
+            },
+          },
+          cancel: {
+            text: "Non",
+            btnClass: "btn-secondary",
+            action: function () {
+              $table.bootstrapTable("uncheck", index);
+            },
+          },
+        },
+      });
+    });
+  },
+
+  generateTable: function (data) {
+    $(".table-list-personnel").bootstrapTable("load", data);
+  },
 };
 
 const Car = {
@@ -301,112 +345,55 @@ const Car = {
       dots: false,
       infinite: false,
       speed: 300,
-      // slidesToShow: 4,
-      // slidesToScroll: 4,
+      slidesToShow: 4,
+      slidesToScroll: 4,
 
-      // responsive: [
-      //   {
-      //     breakpoint: 1024,
-      //     settings: {
-      //       slidesToShow: 3,
-      //       slidesToScroll: 3,
-      //       infinite: true,
-      //       dots: true,
-      //     },
-      //   },
-      //   {
-      //     breakpoint: 600,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 2,
-      //     },
-      //   },
-      //   {
-      //     breakpoint: 480,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1,
-      //     },
-      //   },
-      // ],
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     });
   },
 
   active: function () {
     $("body").on("click", ".card-car", function () {
       $this = $(this);
+      const content = $this.parent().data('bs-target');
+      const $carContent = $('.car-content');
+
+      
+      $(content).addClass('show active');
       $(".card-car").removeClass("active-car");
 
       $this.addClass("active-car");
     });
   },
 
-  headerDisplay: function (car) {
-    const cars = $("#cars");
-    const htmlCar = `
-        <div class="col-12 col-md-3 mb-3" role="presentation">
-            <button class="nav-link active bg-white rounded-5 p-1 w-100"
-                id="v-pills-voiture1-tab" data-bs-toggle="pill"
-                data-bs-target="#v-pills-voiture1" type="button" role="tab"
-                aria-controls="v-pills-voiture1" aria-selected="true">
-
-                <div class="p-2 px-3 rounded-5  card-car text-dark active-car"
-                    style="background: #F4F9FD;">
-                    <h4 class="m-0">${car.voiture}</h4>
-                    <p>${car.trajet}</p>
-                </div>
-
-            </button>
-        </div>
-    `;
-    cars.append(htmlCar);    
-  },
-
-  DisplayContent: function (car) {
-    const carContents = $("#cars-contents");
-
-    const driver = this.getDriver(car.data);
-    const passages = this.getPassagers(car.data);
-
-    carContents.append(`
-      <div class="tab-pane fade show active" id="v-pills-voiture1" role="tabpanel" aria-labelledby="v-pills-voiture1-tab">
-          <div class="row">
-              ${driver}
-              ${passages}
-          </div>
-      </div>            
-    `);
-  },
-
-  getPassagers : function(data){
-    let passages = data.filter(item => item.id != 'c');
-
-    let cards = '';
-    {passages.forEach((passage) => {
-      if(passage.personnel == ''){
-        htmlPersonnel = Templante.default(passage);
-      }else{
-        htmlPersonnel =  Templante.personel(passage);
-      }
-        cards += htmlPersonnel;
-      })
-      return cards;
-    };
-  },
-
-  getDriver : function(data){
-    const driver = data.find(item => item.id == 'c')?.personnel;
-    if(driver == ''){
-      html =Templante.default(driver.id);
-    }else{
-      html = Templante.driver(driver);
-    }
-    return html;
-  }
 };
 
-const Templante =  {
-  default : function(data){
+const Templante = {
+  default: function (data) {
     const html = `
       <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
           data-target="#add-personel" data-id-block=${data.id}>
@@ -418,12 +405,12 @@ const Templante =  {
         </div>
 
       </div>
-    `
+    `;
     return html;
   },
 
-  personel : function(data){
-    const html =`
+  personel: function (data) {
+    const html = `
         <div class="col-12 col-md-3 mb-3 card-add-personel" data-toggle="modal"
             data-target="#add-personel" data-id-block=${data.id}>
             
@@ -438,11 +425,27 @@ const Templante =  {
                 </span>
             </div>
 
-        </div>`
+        </div>`;
     return html;
   },
 
-  driver : function(driver){
+  newElementPeronnel : function(newElement) {
+    const html = `
+      <div class="card rounded-4 p-3 w-100" style="min-height: 140px;">
+          <h3 class="m-0 mb-2 p-0">${newElement.nom}</h3>
+          <p class="opacity-50">${newElement.adresse}</p>
+          <span class="d-flex align-items-center gap-1">
+              <p class="m-0 text-secondary fw-bold p-2 rounded-3"
+                  style="background: #F4F9FD;">106
+              </p>
+              <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+          </span>
+      </div>
+    `
+    return html;
+  },
+
+  driver: function (driver) {
     const html = `
     <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal" data-target="#add-personel">
         <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center" style="min-height: 140px;">
@@ -459,10 +462,7 @@ const Templante =  {
             </div>
             <img src="./assets/image/volant.png" alt="" class="opacity-50"style="width: 100px; height: 100px;">
         </div>
-      </div>`
+      </div>`;
     return html;
-  }
-
-
-}
-
+  },
+};
