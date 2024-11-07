@@ -6,163 +6,28 @@ $(document).ready(function () {
 
   //upload
   var data = [
-    {
-      id: 1,
-      heure: "7h - 15h",
-      nom: "Ando",
-      hotel: "Carlton",
-      adresse: "23 rue de l'Indépendance",
-      contact: "0345678901",
-    },
-    {
-      id: 2,
-      heure: "8h - 14h",
-      hotel: "Ibis",
-      nom: "Haja",
-      adresse: "56 rue Razanamihaja",
-      contact: "0346789012",
-    },
-    {
-      id: 3,
-      heure: "9h - 13h",
-      hotel: "Hilton",
-      nom: "Fara",
-      adresse: "10 avenue de l’Université",
-      contact: "0347890123",
-    },
-    {
-      id: 4,
-      heure: "11h - 12h",
-      hotel: "Le Louvre",
-      nom: "Voara",
-      adresse: "78 rue d’Ambohitsirohitra",
-      contact: "0348901234",
-    },
-    {
-      id: 5,
-      heure: "12h - 13h",
-      hotel: "Carlton",
-      nom: "Tahina",
-      adresse: "34 rue du Commerce",
-      contact: "0349012345",
-    },
-    {
-      id: 6,
-      heure: "16h - 18h",
-      hotel: "Ibis",
-      nom: "Solo",
-      adresse: "12 rue de Mahamasina",
-      contact: "0340123456",
-    },
-    {
-      id: 7,
-      heure: "17h - 19h",
-      hotel: "Hilton",
-      nom: "Lova",
-      adresse: "89 avenue de l’Amitié",
-      contact: "0341234567",
-    },
-    {
-      id: 8,
-      heure: "17h - 19h",
-      hotel: "Hilton",
-      nom: "Lova",
-      adresse: "89 avenue de l’Amitié",
-      contact: "0341234567",
-    },
-    {
-      id: 9,
-      heure: "17h - 19h",
-      hotel: "Hilton",
-      nom: "Lova",
-      adresse: "89 avenue de l’Amitié",
-      contact: "0341234567",
-    },
-    {
-      id: 10,
-      heure: "17h - 19h",
-      hotel: "Hilton",
-      nom: "Lova",
-      adresse: "89 avenue de l’Amitié",
-      contact: "0341234567",
-    },
-  ];
+    { id: 1, heure: "7h - 15h", nom: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" },
+    { id: 2, heure: "8h - 14h", nom: "Haja", hotel: "Ibis", adresse: "56 rue Razanamihaja", contact: "0346789012" },
+    { id: 3, heure: "9h - 13h", nom: "Fara", hotel: "Hilton", adresse: "10 avenue de l’Université", contact: "0347890123" },
+    { id: 4, heure: "11h - 12h", nom: "Voara", hotel: "Le Louvre", adresse: "78 rue d’Ambohitsirohitra", contact: "0348901234" },
+    { id: 5, heure: "12h - 13h", nom: "Tahina", hotel: "Carlton", adresse: "34 rue du Commerce", contact: "0349012345" },
+    { id: 6, heure: "16h - 18h", nom: "Solo", hotel: "Ibis", adresse: "12 rue de Mahamasina", contact: "0340123456" },
+    { id: 7, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+    { id: 8, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+    { id: 9, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+    { id: 10, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+    { id: 11, heure: "6h - 14h", nom: "Zo", hotel: "Colbert", adresse: "1 avenue de l'Indépendance, Antananarivo", contact: "0342345678" },
+    { id: 12, heure: "7h - 15h", nom: "Mamy", hotel: "Palissandre", adresse: "45 rue Ravelojaona, Tana", contact: "0343456789" },
+    { id: 13, heure: "8h - 16h", nom: "Tina", hotel: "Grand Mellis", adresse: "12 rue d’Isoraka, Tana", contact: "0344567890" },
+    { id: 14, heure: "10h - 18h", nom: "Rina", hotel: "Sole", adresse: "3 rue de Faravohitra, Antananarivo", contact: "0345678901" },
+    { id: 15, heure: "12h - 20h", nom: "Fy", hotel: "A&C Hotel", adresse: "23 boulevard de l'Europe, Ivato", contact: "0346789012" },
+    { id: 16, heure: "14h - 22h", nom: "Tsiry", hotel: "Sunny Garden", adresse: "56 avenue de l'Aviation, Ivandry", contact: "0347890123" },
+    { id: 17, heure: "16h - 23h", nom: "Zo", hotel: "Calypso", adresse: "1 rue de l’Océan Indien, Toamasina", contact: "0348901234" },
+    { id: 18, heure: "18h - 2h", nom: "Niry", hotel: "Pavillon de l’Emyrne", adresse: "14 rue Ravelojaona, Isoraka", contact: "0349012345" },
+    { id: 19, heure: "6h - 12h", nom: "Hery", hotel: "Le Raphia", adresse: "2 rue Ratsimilaho, Fianarantsoa", contact: "0340123456" },
+    { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }
+];
 
-  // var dataCar = {
-  //   voiture: "Voiture 1",
-  //   trajet: "Analakely- Mahazo",
-  //   data: [
-  //     {
-  //       id: "c",
-  //       personnel: { id: 1, name: "Vonjy", adresse: "67ha", point: "106" },
-  //     },
-  //     {
-  //       id: "p1",
-  //       personnel: {
-  //         id: 1,
-  //         date: "7h - 15h",
-  //         hotel: "Carlton",
-  //         nom: "Ando",
-  //         adresse: "23 rue de l’Indépendance",
-  //         contact: "0345678901",
-  //       },
-  //     },
-  //     {
-  //       id: "p2",
-  //       personnel: {
-  //         id: 1,
-  //         date: "7h - 15h",
-  //         hotel: "Carlton",
-  //         nom: "Ando",
-  //         adresse: "23 rue de l’Indépendance",
-  //         contact: "0345678901",
-  //       },
-  //     },
-  //     {
-  //       id: "p3",
-  //       personnel: {
-  //         id: 3,
-  //         date: "7h - 15h",
-  //         hotel: "Carlton",
-  //         nom: "Lova",
-  //         adresse: "23 rue de l’Indépendance",
-  //         contact: "0345678901",
-  //       },
-  //     },
-  //     {
-  //       id: "p4",
-  //       personnel: {
-  //         id: 4,
-  //         date: "7h - 15h",
-  //         hotel: "Carlton",
-  //         nom: "koko",
-  //         adresse: "23 rue de l’Indépendance",
-  //         contact: "0345678901",
-  //       },
-  //     },
-  //     { id: "p5", personnel: "" },
-  //     { id: "p6", personnel: "" },
-  //     { id: "p7", personnel: "" },
-  //     { id: "p8", personnel: "" },
-  //     { id: "p9", personnel: "" },
-  //     { id: "p10", personnel: "" },
-  //     { id: "p11", personnel: "" },
-  //     { id: "p12", personnel: "" },
-  //     { id: "p13", personnel: "" },
-  //     { id: "p14", personnel: "" },
-  //     { id: "p15", personnel: "" },
-  //     { id: "p16", personnel: "" },
-  //     { id: "p17", personnel: "" },
-  //     { id: "p18", personnel: "" },
-  //     { id: "p19", personnel: "" },
-  //     { id: "p20", personnel: "" },
-  //     { id: "p21", personnel: "" },
-  //     { id: "p22", personnel: "" },
-  //   ],
-  // };
-
-  // Car.headerDisplay(dataCar);
-  // Car.DisplayContent(dataCar);
   
   Car.carousel();
   Car.active();
@@ -298,17 +163,18 @@ const Personnel = {
 
   addIfChecked : function(dataPersonnel) {
     $table = $("#table-personnel");
-
+    
     // const $wrapper = $('#voiture1').find('[data-id-block="p5"]')
     // console.log($wrapper);
     
     $table.on("check.bs.table", function (e, row, $element) {
+
       const index = $("#table-personnel").bootstrapTable("getData").indexOf(row);
       const rowChecked = $element.closest("tr").find('div');
       const idRowChecked = rowChecked.data('id');
       const personnel = dataPersonnel.find((item) => item.id == idRowChecked);
       
-      $wrapper.html(Templante.newElementPeronnel(personnel));
+      // $wrapper.html(Templante.newElementPeronnel(personnel));
       
       $.confirm({
         title: "Vous voulez ajoutez cette personne dans le voiture?",
@@ -331,6 +197,7 @@ const Personnel = {
           },
         },
       });
+      
     });
   },
 
