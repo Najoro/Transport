@@ -6,31 +6,185 @@ $(document).ready(function () {
 
   //upload
   var data = [
-    { id: 1, heure: "7h - 15h", nom: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" },
-    { id: 2, heure: "8h - 14h", nom: "Haja", hotel: "Ibis", adresse: "56 rue Razanamihaja", contact: "0346789012" },
-    { id: 3, heure: "9h - 13h", nom: "Fara", hotel: "Hilton", adresse: "10 avenue de l’Université", contact: "0347890123" },
-    { id: 4, heure: "11h - 12h", nom: "Voara", hotel: "Le Louvre", adresse: "78 rue d’Ambohitsirohitra", contact: "0348901234" },
-    { id: 5, heure: "12h - 13h", nom: "Tahina", hotel: "Carlton", adresse: "34 rue du Commerce", contact: "0349012345" },
-    { id: 6, heure: "16h - 18h", nom: "Solo", hotel: "Ibis", adresse: "12 rue de Mahamasina", contact: "0340123456" },
-    { id: 7, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
-    { id: 8, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
-    { id: 9, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
-    { id: 10, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
-    { id: 11, heure: "6h - 14h", nom: "Zo", hotel: "Colbert", adresse: "1 avenue de l'Indépendance, Antananarivo", contact: "0342345678" },
-    { id: 12, heure: "7h - 15h", nom: "Mamy", hotel: "Palissandre", adresse: "45 rue Ravelojaona, Tana", contact: "0343456789" },
-    { id: 13, heure: "8h - 16h", nom: "Tina", hotel: "Grand Mellis", adresse: "12 rue d’Isoraka, Tana", contact: "0344567890" },
-    { id: 14, heure: "10h - 18h", nom: "Rina", hotel: "Sole", adresse: "3 rue de Faravohitra, Antananarivo", contact: "0345678901" },
-    { id: 15, heure: "12h - 20h", nom: "Fy", hotel: "A&C Hotel", adresse: "23 boulevard de l'Europe, Ivato", contact: "0346789012" },
-    { id: 16, heure: "14h - 22h", nom: "Tsiry", hotel: "Sunny Garden", adresse: "56 avenue de l'Aviation, Ivandry", contact: "0347890123" },
-    { id: 17, heure: "16h - 23h", nom: "Zo", hotel: "Calypso", adresse: "1 rue de l’Océan Indien, Toamasina", contact: "0348901234" },
-    { id: 18, heure: "18h - 2h", nom: "Niry", hotel: "Pavillon de l’Emyrne", adresse: "14 rue Ravelojaona, Isoraka", contact: "0349012345" },
-    { id: 19, heure: "6h - 12h", nom: "Hery", hotel: "Le Raphia", adresse: "2 rue Ratsimilaho, Fianarantsoa", contact: "0340123456" },
-    { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }
-];
+      { id: 1, heure: "7h - 15h", nom: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" },
+      { id: 2, heure: "8h - 14h", nom: "Haja", hotel: "Ibis", adresse: "56 rue Razanamihaja", contact: "0346789012" },
+      { id: 3, heure: "9h - 13h", nom: "Fara", hotel: "Hilton", adresse: "10 avenue de l’Université", contact: "0347890123" },
+      { id: 4, heure: "11h - 12h", nom: "Voara", hotel: "Le Louvre", adresse: "78 rue d’Ambohitsirohitra", contact: "0348901234" },
+      { id: 5, heure: "12h - 13h", nom: "Tahina", hotel: "Carlton", adresse: "34 rue du Commerce", contact: "0349012345" },
+      { id: 6, heure: "16h - 18h", nom: "Solo", hotel: "Ibis", adresse: "12 rue de Mahamasina", contact: "0340123456" },
+      { id: 7, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+      { id: 8, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+      { id: 9, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+      { id: 10, heure: "17h - 19h", nom: "Lova", hotel: "Hilton", adresse: "89 avenue de l’Amitié", contact: "0341234567" },
+      { id: 11, heure: "6h - 14h", nom: "Zo", hotel: "Colbert", adresse: "1 avenue de l'Indépendance, Antananarivo", contact: "0342345678" },
+      { id: 12, heure: "7h - 15h", nom: "Mamy", hotel: "Palissandre", adresse: "45 rue Ravelojaona, Tana", contact: "0343456789" },
+      { id: 13, heure: "8h - 16h", nom: "Tina", hotel: "Grand Mellis", adresse: "12 rue d’Isoraka, Tana", contact: "0344567890" },
+      { id: 14, heure: "10h - 18h", nom: "Rina", hotel: "Sole", adresse: "3 rue de Faravohitra, Antananarivo", contact: "0345678901" },
+      { id: 15, heure: "12h - 20h", nom: "Fy", hotel: "A&C Hotel", adresse: "23 boulevard de l'Europe, Ivato", contact: "0346789012" },
+      { id: 16, heure: "14h - 22h", nom: "Tsiry", hotel: "Sunny Garden", adresse: "56 avenue de l'Aviation, Ivandry", contact: "0347890123" },
+      { id: 17, heure: "16h - 23h", nom: "Zo", hotel: "Calypso", adresse: "1 rue de l’Océan Indien, Toamasina", contact: "0348901234" },
+      { id: 18, heure: "18h - 2h", nom: "Niry", hotel: "Pavillon de l’Emyrne", adresse: "14 rue Ravelojaona, Isoraka", contact: "0349012345" },
+      { id: 19, heure: "6h - 12h", nom: "Hery", hotel: "Le Raphia", adresse: "2 rue Ratsimilaho, Fianarantsoa", contact: "0340123456" },
+      { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }
+  ];
 
+  var cars = [
+  {
+    id: "1",
+    name: "Voiture 1",
+    route: "Analakely - Mahazo",
+    data: [
+      {place: 'c', personale: { id: 1, heure: "7h - 15h", nom: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" }, },
+      {place: 'p1', personale: { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }},
+      {place: 'p2', personale: ""},
+      {place: 'p3', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p5', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p7', personale: ""},
+      {place: 'p8', personale: ""},
+      {place: 'p9', personale: ""},
+      {place: 'p10', personale: ""},
+      {place: 'p11', personale: ""},
+      {place: 'p12', personale: ""},
+      {place: 'p13', personale: ""},
+      {place: 'p14', personale: ""},
+      {place: 'p15', personale: ""},
+      {place: 'p16', personale: ""},
+      {place: 'p17', personale: ""},
+      {place: 'p18', personale: ""},
+      {place: 'p19', personale: ""},
+      {place: 'p20', personale: ""},
+      {place: 'p21', personale: ""},
+      {place: 'p22', personale: ""},
+    ]
+  },
+  {
+    id: "2",
+    name: "Voiture 2",
+    route: "Itaosy - Analakely",
+    data: [
+      {place: 'c', personale: { id: 1, heure: "7h - 15h", nom: "Rojo", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" }, },
+      {place: 'p1', personale: { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }},
+      {place: 'p2', personale: ""},
+      {place: 'p3', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p5', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p7', personale: ""},
+      {place: 'p8', personale: ""},
+      {place: 'p9', personale: ""},
+      {place: 'p10', personale: ""},
+      {place: 'p11', personale: ""},
+      {place: 'p12', personale: ""},
+      {place: 'p13', personale: ""},
+      {place: 'p14', personale: ""},
+      {place: 'p15', personale: ""},
+      {place: 'p16', personale: ""},
+      {place: 'p17', personale: ""},
+      {place: 'p18', personale: ""},
+      {place: 'p19', personale: ""},
+      {place: 'p20', personale: ""},
+      {place: 'p21', personale: ""},
+      {place: 'p22', personale: ""},
+    ]
+  },
+  {
+    id: "3",
+    name: "Voiture 3",
+    route: "Anosy - Ankatso",
+    data: [
+      {place: 'c', personale: { id: 1, heure: "7h - 15h", nom: "Toma", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" }, },
+      {place: 'p1', personale: { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }},
+      {place: 'p2', personale: ""},
+      {place: 'p3', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p5', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p7', personale: ""},
+      {place: 'p8', personale: ""},
+      {place: 'p9', personale: ""},
+      {place: 'p10', personale: ""},
+      {place: 'p11', personale: ""},
+      {place: 'p12', personale: ""},
+      {place: 'p13', personale: ""},
+      {place: 'p14', personale: ""},
+      {place: 'p15', personale: ""},
+      {place: 'p16', personale: ""},
+      {place: 'p17', personale: ""},
+      {place: 'p18', personale: ""},
+      {place: 'p19', personale: ""},
+      {place: 'p20', personale: ""},
+      {place: 'p21', personale: ""},
+      {place: 'p22', personale: ""},
+    ]
+  },
+  {
+    id: "4",
+    name: "Voiture 4",
+    route: "67ha - Mahazo",
+    data: [
+      {place: 'c', personale: { id: 1, heure: "7h - 15h", nom: "KOKO", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" }, },
+      {place: 'p1', personale: { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }},
+      {place: 'p2', personale: ""},
+      {place: 'p3', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p5', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p7', personale: ""},
+      {place: 'p8', personale: ""},
+      {place: 'p9', personale: ""},
+      {place: 'p10', personale: ""},
+      {place: 'p11', personale: ""},
+      {place: 'p12', personale: ""},
+      {place: 'p13', personale: ""},
+      {place: 'p14', personale: ""},
+      {place: 'p15', personale: ""},
+      {place: 'p16', personale: ""},
+      {place: 'p17', personale: ""},
+      {place: 'p18', personale: ""},
+      {place: 'p19', personale: ""},
+      {place: 'p20', personale: ""},
+      {place: 'p21', personale: ""},
+      {place: 'p22', personale: ""},
+    ]
+  },
+  {
+    id: "5",
+    name: "Voiture 5",
+    route: "Tana - Fianara",
+    data: [
+      {place: 'c', personale: { id: 1, heure: "7h - 15h", nom: "Lova", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901" }, },
+      {place: 'p1', personale: { id: 20, heure: "10h - 16h", nom: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue de l’Indépendance, Mahajanga", contact: "0341234567" }},
+      {place: 'p2', personale: ""},
+      {place: 'p3', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p5', personale: ""},
+      {place: 'p4', personale: ""},
+      {place: 'p7', personale: ""},
+      {place: 'p8', personale: ""},
+      {place: 'p9', personale: ""},
+      {place: 'p10', personale: ""},
+      {place: 'p11', personale: ""},
+      {place: 'p12', personale: ""},
+      {place: 'p13', personale: ""},
+      {place: 'p14', personale: ""},
+      {place: 'p15', personale: ""},
+      {place: 'p16', personale: ""},
+      {place: 'p17', personale: ""},
+      {place: 'p18', personale: ""},
+      {place: 'p19', personale: ""},
+      {place: 'p20', personale: ""},
+      {place: 'p21', personale: ""},
+      {place: 'p22', personale: ""},
+    ]
+  },
+  ]
   
-  Car.carousel();
   Car.active();
+  Car.dynamicHeader(cars);
+  Car.dynamicContent(cars);
+  Car.carousel();
   
   Personnel.autoDistribution();
   Personnel.addManual();
@@ -247,8 +401,6 @@ const Car = {
     $("body").on("click", ".card-car", function () {
       $this = $(this);
       const content = $this.parent().data('bs-target');
-      const $carContent = $('.car-content');
-
       
       $(content).addClass('show active');
       $(".card-car").removeClass("active-car");
@@ -256,6 +408,69 @@ const Car = {
       $this.addClass("active-car");
     });
   },
+
+  dynamicHeader: function(cars) {
+    const $cars = $('#cars');
+
+    cars.forEach((car,index) => {
+      var active = '';
+      var activeCar = '';
+      var selected = false;
+      const identify = `${car.name.split(" ").join("-")}-${car.id}`
+      
+
+      if(index == 0){
+        active ="active";
+        selected = true;
+        activeCar = "active-car";
+      }
+      
+      $cars.append(` 
+      <!--Voiture ${car.id}-->
+      <div class="col-12 col-md-3 mb-3" role="presentation">
+
+          <button class="nav-link bg-white rounded-5 p-1 w-100 ${active}" id="v-pills-${identify}-tab" 
+              data-bs-toggle="pill" data-bs-target="#v-pills-${identify}" type="button" 
+              role="tab" aria-controls="v-pills-${identify}" aria-selected="${selected}">
+              <div class="p-2 px-3 rounded-5 card-car text-dark ${activeCar}"
+                  style="background: #F4F9FD;">
+                  <h4 class="m-0">${car.name}</h4>
+                  <p>${car.route}</p>
+              </div>
+          </button>
+
+      </div>`)
+
+    })
+  },
+
+  dynamicContent: function(cars) {
+    const $carContent = $('#cars-contents');
+    cars.forEach((car,index) => {
+      var data = car.data;
+      var defaulteTemplante = '';
+      var showContent = (index == 0) ? "show active" : "";
+      const identify = `${car.name.split(" ").join("-")}-${car.id}`
+      const driver = car.data.find(item => item.place = "c");
+
+      data.forEach(element => {
+        if(element.place == 'c'){
+          return;
+        }
+        defaulteTemplante += Templante.default(element);
+      });
+      $carContent.append(`
+        <!-- Contenu Voiture 1 -->
+        <div class="tab-pane fade ${showContent} car-content" id="v-pills-${identify}" role="tabpanel" aria-labelledby="v-pills-${identify}-tab">
+            <div class="row">
+              ${Templante.defaultDriver(driver)}
+              ${defaulteTemplante}
+            </div>
+        </div>  
+      `);
+
+    })
+  }
 
 };
 
@@ -330,6 +545,21 @@ const Templante = {
             <img src="./assets/image/volant.png" alt="" class="opacity-50"style="width: 100px; height: 100px;">
         </div>
       </div>`;
+    return html;
+  },
+  defaultDriver: function (driver) {
+    const html = `
+     <div class="col-12 col-md-6 mb-3 card-add-personel " data-toggle="modal"
+          data-target="#add-personel" data-id-block=${driver.personale.id}>
+          
+          <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
+            style="min-height: 140px;  border-style:dashed;">
+            <i class="bi me-2 bi-plus-lg fs-3 opacity-50"></i>
+            <h4 class="m-0 mb-2 p-0 opacity-50">Ajout mauel</h4>
+        </div>
+
+      </div>`
+
     return html;
   },
 };
