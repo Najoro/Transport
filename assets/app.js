@@ -293,9 +293,12 @@ const Personnel = {
         const parent = $element.closest("tr");
 
         $(".add-maual-personnel").on("click", function () {
-
-          $this.html(Templante.newElementPeronnel(newElement));
-
+          if($this.hasClass('is-driver')){
+            $this.html(Templante.newElementDriver(newElement));
+          }else{
+            $this.html(Templante.newElementPeronnel(newElement));
+          }
+          
           $(target).modal("hide");
           parent.addClass("use");
 
@@ -526,7 +529,25 @@ const Templante = {
     `
     return html;
   },
-
+  newElementDriver : function(newElement) {
+    const html = `
+       <div class="card rounded-4 p-3 w-100 d-flex flex-row justify-content-between align-items-center" style="min-height: 140px;">
+            <div class="">
+              <h3 class="m-0 mb-2 p-0">${newElement.nom}</h3>
+              <p class="opacity-50">Chauffeur</p>
+              <span class="d-flex align-items-center gap-1">
+                  <p class="m-0 text-secondary fw-bold p-2 rounded-3"
+                      style="background: #F4F9FD;">106
+                  </p>
+                  <i class="bi bi-arrow-up fs-4 color-yellow"></i>
+                  <i class="bi bi-arrow-down fs-4 color-green"></i>
+                </span>
+            </div>
+            <img src="./assets/image/volant.png" alt="" class="opacity-50"style="width: 100px; height: 100px;">
+        </div>
+    `
+    return html;
+  },
   driver: function (driver) {
     const html = `
     <div class="col-12 col-md-6 card-add-personel mb-3" data-toggle="modal" data-target="#add-personel">
@@ -549,7 +570,7 @@ const Templante = {
   },
   defaultDriver: function (driver) {
     const html = `
-     <div class="col-12 col-md-6 mb-3 card-add-personel " data-toggle="modal"
+     <div class="col-12 col-md-6 mb-3 card-add-personel is-driver" data-toggle="modal"
           data-target="#add-personel" data-id-block=${driver.personale.id}>
           
           <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
