@@ -14,6 +14,7 @@ $(document).ready(function () {
   Personnel.autoDistribution(data,cars);
   Personnel.addIfChecked(data, cars);
   Personnel.generateTable(data);
+  Personnel.saveDataCar(cars);
 });
 
 const Menu = {
@@ -94,30 +95,23 @@ const Personnel = {
     $("body").on("click", ".card-add-personel", function () {
       $this = $(this);
       let newElement = {};
-      // const carId = $this.parent().data('car-id');
-      // const carPlace = $this.data('id-block');
       const target = $this.data("target");
       const $table = $("#table-list-personnel");
 
-      //afficher le modale
       $(target).modal("show");
 
-      //envenement checked de bootstrap-table
       $table.on("check.bs.table", function (e, row, $element) {
         newElement = row;
 
-        //si le btn du modale est clicker
         $(".add-maual-personnel").on("click", function () {
           if ($this.hasClass("is-driver")) {
             $this.html(Templante.newElementDriver(newElement));
           } else {
             $this.html(Templante.newElementPeronnel(newElement));
           }
-          
-          //cache le modale
+
           $(target).modal("hide");
 
-          //decocher l'element du depart
           const index = $("#table-personnel")
             .bootstrapTable("getData")
             .indexOf(row);
@@ -148,7 +142,9 @@ const Personnel = {
       checked.each(function() {
         var dataId = $(this).closest('tr').find('.card-personnel').data('id');
         const personnel = data.find(item => item.id == dataId);
-        PersonnelSelected.push(personnel);
+        if(personnel != undefined){
+          PersonnelSelected.push(personnel);
+        }
       });      
     });
 
@@ -192,15 +188,25 @@ const Personnel = {
               
               for (const [index,personnel] of PersonnelSelected.entries()) {
                 var place =`p${index + 1}`;
-                if(personnel != undefined ){
-                  var personnalCar = currentCar.data.find(item => item.place == place);
-                  personnalCar.personale = personnel;
-
+                var personnalCar = currentCar.data.find(item => item.place == place);
+                if(personnalCar){
+                  personnalCar.personale = personnel; 
                   const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
-                  
                   placeWrapper.html(Templante.newElementPeronnel(personnel));
                 }
               }
+
+              $.alert({
+                title : "SUCCESS",
+                content: "importation reussie",
+                autoClose: "cancel|2000",
+                buttons: {
+                  cancel:{
+                    text: "ok",
+                    btnClass: "btn-success",
+                  }
+                }
+              })
             },
           },
 
@@ -214,6 +220,50 @@ const Personnel = {
         },
       });
     });
+  },
+
+
+  saveDataCar: function(cars){
+    $('body').on('click', '#save-data-car', function() {
+      const url = $(this).data('url');
+      console.log(url);
+      
+      $.ajax({
+        url : url,
+        type: "GET",
+        data: {
+          cars : cars,
+        },
+        success: function() {
+          $.alert({
+            title: "succès",
+            content: "Les données sont bien sauvegardée.",
+            autoClose: "cancel|2000",
+            type: "green",
+            buttons:{
+              cancel: {
+                text: "ok",
+                btn : "btn-success",
+              }
+            }
+          })
+        },
+        error: function() {
+          $.alert({
+            title: "succès",
+            content: "Erreur Serveur",
+            autoClose: "cancel|2000",
+            type: "red",
+            buttons:{
+              cancel: {
+                text: "ok",
+                btn : "btn-danger",
+              }
+            }
+          })
+        }
+      })
+    })
   },
 
   addIfChecked: function (dataPersonnel, cars) {
@@ -257,7 +307,6 @@ const Personnel = {
             <select id="placeSelect" name="option" class="form-control">
               <option value="">Selectioner une place</option>
               ${placeSelectOptions}
-              
             </select>
           </div>
         </form>`,
@@ -283,7 +332,6 @@ const Personnel = {
                   type: "red",
                 })
               }else{
-
               currentCar = cars.find((item) => item.id === carId);
               currentCar.data.forEach(item => {
                 if(item.place == place){

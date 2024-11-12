@@ -207,6 +207,33 @@
       contact: "0341234567",
       point: "36",
     },
+    {
+      id: 21,
+      heure: "10h - 16h",
+      name: "Rondro",
+      hotel: "Les 3 Métis",
+      adresse: "7 avenue  ",
+      contact: "0341234567",
+      point: "36",
+    },
+    {
+      id: 22,
+      heure: "10h - 16h",
+      name: "Vola",
+      hotel: "Les 3 Métis",
+      adresse: "7 avenue  ",
+      contact: "0341234567",
+      point: "36",
+    },
+    {
+      id: 23,
+      heure: "10h - 16h",
+      name: "LOLO",
+      hotel: "Les 3 Métis",
+      adresse: "7 avenue  ",
+      contact: "0341234567",
+      point: "36",
+    },
   ];
 
   var cars = [
@@ -216,8 +243,8 @@
       route: "Analakely - Mahazo",
       data: [
         { place: "c", personale: { id: 1, heure: "7h - 15h", name: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "16" } },
-        { place: "p1", personale: { id: 20, heure: "10h - 16h", name: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue", contact: "0341234567", point: "16" } },
-        { place: "p2", personale: { id: 21, heure: "10h - 16h", name: "Koloina", hotel: "Les 3 Métis", adresse: "12 Avenue", contact: "0341234567", point: "16" } },
+        { place: "p1", personale: ""},
+        { place: "p2", personale: ""},
         { place: "p3", personale: "" },
         { place: "p4", personale: "" },
         { place: "p5", personale: "" },
@@ -663,10 +690,15 @@
                         <div class="col-12 d-flex justify-content-center align-items-md-center flex-column my-3">
                             <h3 class="fw-light"><span class="checked-lenght">0</span> Séléctionnés</h3>
                             <button
-                                class="btn btn-primary fs-6 d-flex justify-content-center align-items-center gap-2 shadow btn-auto-distribution"
+                                class="btn btn-primary fs-6 d-flex justify-content-center align-items-center mb-3 gap-2 shadow btn-auto-distribution"
                                 data-toggle="modal" data-target="#auto-distribution">
                                 Répartition auto
-                                <i class="bi bi-arrow-right-circle-fill fs-6"></i>
+                                <i class="bi bi-arrow-right-circle-fill fs-4"></i>
+                            </button>
+                            <button
+                                class="btn btn-success fs-6 d-flex justify-content-center align-items-center gap-2 shadow" data-url="/test/test" id="save-data-car">
+                                Sauvegarder
+                                <i class="bi bi-save fs-4"></i>
                             </button>
                         </div>
                     </div>
