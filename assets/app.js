@@ -9,12 +9,11 @@ $(document).ready(function () {
   Car.dynamicContent(cars);
   Car.carousel();
 
-  Personnel.autoDistribution();
+  Personnel.autoGenerate(data);
   Personnel.addManual(cars);
-  console.log(cars);
+  Personnel.autoDistribution(data,cars);
   Personnel.addIfChecked(data, cars);
   Personnel.generateTable(data);
-  Personnel.autoGenerate(data);
 });
 
 const Menu = {
@@ -51,7 +50,7 @@ const File = {
       reader.onload = function (event) {
         const data = new Uint8Array(event.target.result);
         const workbook = XLSX.read(data, { type: "array" });
-        console.log(workbook);
+        // console.log(workbook);
 
         const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
         const sheetData = XLSX.utils.sheet_to_html(firstSheet);
@@ -74,7 +73,7 @@ const Personnel = {
 
     data.forEach((element) => {
       const html = `
-        <div class="position-relative rounded-4 p-3 mb-2" data-id="${element.id}">
+        <div class="position-relative rounded-4 p-3 mb-2 card-personnel" data-id="${element.id}">
             <h3 class="m-0 mb-2 p-0">${element.name}</h3>
             <p class="opacity-50 mb-4">${element.adresse}</p>
             <span class="d-flex align-items-center gap-2">
@@ -84,18 +83,11 @@ const Personnel = {
             </span>
         </div>
         `;
+      
       dataTable.push({ card: html });
       $tablePersonel.bootstrapTable("load", dataTable);
-
-      $("body").on("change","#personel-list input[type='checkbox']", function () {
-          $this = $(this);
-          var checkedLength = $(
-            "#personel-list input[type='checkbox']:checked"
-          ).length;
-          $(".checked-lenght").text(checkedLength);
-        }
-      );
     });
+    
   },
 
   addManual: function (cars) {
@@ -109,7 +101,6 @@ const Personnel = {
 
       //afficher le modale
       $(target).modal("show");
-      console.log();
 
       //envenement checked de bootstrap-table
       $table.on("check.bs.table", function (e, row, $element) {
@@ -122,8 +113,7 @@ const Personnel = {
           } else {
             $this.html(Templante.newElementPeronnel(newElement));
           }
-          console.log(cars);
-
+          
           //cache le modale
           $(target).modal("hide");
 
@@ -137,12 +127,92 @@ const Personnel = {
     });
   },
 
-  autoDistribution: function () {
-    $("body").on("click", ".btn-auto-distribution", function () {
-      $this = $(this);
-      $target = $this.data("target");
+  /**
+   * Recuperer tous les element checked
+   *    recuperer l'id de tous les element checked
+   *    
+   * 
+   * ajouter dans le "cars" choisie | Afficher dans le "cars" choisie
+   *      si je click sur l'element "Repartition automatique"
+   *          une popUp apparait -> choix du voiture (select)
+   *          Si je valide : les personnel ajout automatiquement dans le contenue du "voitire" choisie
+   *          sinon en enleve le popup
+   */
 
-      $($target).modal("show");
+  autoDistribution: function (data, cars) {
+    var PersonnelSelected = [];
+    $("body").on("change","#personel-list input[type='checkbox']", function () {
+      var checked = $("#personel-list input[type='checkbox']:checked")      
+      $(".checked-lenght").text(checked.length);
+
+      checked.each(function() {
+        var dataId = $(this).closest('tr').find('.card-personnel').data('id');
+        const personnel = data.find(item => item.id == dataId);
+        PersonnelSelected.push(personnel);
+      });      
+    });
+
+    $("body").on("click", ".btn-auto-distribution", function () {
+      const $this = $(this);
+      var carSelectOptions = "";
+      let carId = "";
+      let carIdentify =""
+
+      for (const car of cars) {
+        const identify = `${car.name.split(" ").join("-")}-${car.id}`;
+        carSelectOptions += `<option value="#${identify}" data-id="${car.id}">${car.name}</option>`;
+      }
+      $.confirm({
+        title: "Vous voulez ajoutez dans quelle voiture?",
+        type: "blue",
+        content: `
+        <form id="popupForm" class="d-flex justify-content-center align-items-center">
+          <div class="form-group border-0 mb-2 form-control">
+            <label for="carSelect" class="fw-bold h5">Voiture</label>
+            <select id="carSelect" name="option" class="form-control">
+              <option value="">Selectionner la voiture</option>
+              ${carSelectOptions}
+              
+            </select>
+          </div>
+
+        </form>`,
+        onContentReady: function () {
+          $("#carSelect").change(function () {
+            carIdentify = $(this).val();
+            carId = $(this).find(":selected").data("id");
+          });
+        },
+        buttons: {
+          confirm: {
+            text: "oui",
+            btnClass: "btn-primary",
+            action: function () {
+              currentCar = cars.find((item) => item.id === carId);  
+              
+              for (const [index,personnel] of PersonnelSelected.entries()) {
+                var place =`p${index + 1}`;
+                if(personnel != undefined ){
+                  var personnalCar = currentCar.data.find(item => item.place == place);
+                  personnalCar.personale = personnel;
+
+                  const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
+                  
+                  placeWrapper.html(Templante.newElementPeronnel(personnel));
+                }
+              }
+            },
+          },
+
+          cancel: {
+            text: "Non",
+            btnClass: "btn-secondary",
+            action: function () {
+             //
+            },
+          },
+        },
+      });
     });
   },
 
@@ -150,9 +220,7 @@ const Personnel = {
     $table = $("#table-personnel");
 
     $table.on("check.bs.table", function (e, row, $element) {
-      const index = $("#table-personnel")
-        .bootstrapTable("getData")
-        .indexOf(row);
+      const index = $("#table-personnel").bootstrapTable("getData").indexOf(row);
       const rowChecked = $element.closest("tr").find("div");
       const personnelInsert = dataPersonnel.find(
         (item) => item.id == rowChecked.data("id")
@@ -171,7 +239,6 @@ const Personnel = {
       for (let i = 1; i <= 22; i++) {
         placeSelectOptions += `<option value="p${i}">place ${i}</option>`;
       }
-
       $.confirm({
         title: "Vous voulez ajoutez dans quelle voiture?",
         type: "blue",
@@ -215,20 +282,19 @@ const Personnel = {
                   content: "Selectionnez d'abord le voiture et la place correspondant",
                   type: "red",
                 })
-              }
+              }else{
+
               currentCar = cars.find((item) => item.id === carId);
               currentCar.data.forEach(item => {
                 if(item.place == place){
                   item.personale = personnelInsert;
                 }
-              })
-              console.log(cars);
-            
-              const placeWrapper = $(
-                `${carIdentify} div[data-id-block="${place}"]`
-              );
+              })            
+              const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
               placeWrapper.html(Templante.newElementPeronnel(personnelInsert));
               $table.bootstrapTable("uncheck", index);
+            }
+
             },
           },
           cancel: {
