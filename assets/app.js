@@ -1,21 +1,48 @@
 $(document).ready(function () {
+  Evenement.lineTabs();
+
   Menu.toogle();
   Menu.showTextMenu();
 
   File.upload();
-
-  Car.active();
-  Car.dynamicHeader(cars);
-  Car.dynamicContent(cars);
-  Car.carousel();
-
-  Personnel.autoGenerate(data);
-  Personnel.addManual(cars);
-  Personnel.autoDistribution(data,cars);
-  Personnel.addIfChecked(data, cars);
-  Personnel.generateTable(data);
-  Personnel.saveDataCar(cars);
+  
+  if($('body').hasClass('gestion')){
+    
+    Car.active();
+    Car.dynamicHeader(cars);
+    Car.dynamicContent(cars);
+    Car.carousel();
+    
+    Personnel.autoGenerate(data);
+    Personnel.addManual(cars);
+    Personnel.autoDistribution(data,cars);
+    Personnel.addIfChecked(data, cars);
+    Personnel.generateTable(data);
+    Personnel.saveDataCar(cars);
+  }
 });
+
+const Evenement = {
+  lineTabs : function() {
+    $('#line-tabs').on('click', 'button', function(){
+      $this = $(this);
+      $btns = $('#line-tabs li button')
+      $btns.removeClass('active-link');
+      
+      $this.addClass('active-link');
+      
+      //creer une nouvelle lien voir les detail
+      $btns.find('.view-detail').remove();
+      const $link = $('<a>', {
+        href: '#',
+        text: 'Voir le detail >>',
+        class: 'view-detail'
+      });
+      $this.append($link);
+
+    })
+  }
+}
 
 const Menu = {
   toogle: function () {
@@ -226,7 +253,6 @@ const Personnel = {
   saveDataCar: function(cars){
     $('body').on('click', '#save-data-car', function() {
       const url = $(this).data('url');
-      console.log(url);
       
       $.ajax({
         url : url,
