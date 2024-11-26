@@ -15,7 +15,7 @@ $(document).ready(function () {
     // Car.dynamicHeader(cars);
     // Car.dynamicContent(cars);
     Car.dynamic(DataCar,personalCar);
-    Car.generatePersonalCar(personalCar);
+    Car.generatePersonalCar(personalCar, DataCar);
     Car.carousel();
     
     Personnel.autoGenerate(personal);
@@ -503,13 +503,21 @@ const Car = {
     });
   },
 
-  generatePersonalCar : function(personalCar) {
+  generatePersonalCar : function(personalCar, DataCar) {
     for (const [index,pc] of personalCar.entries()) {
+      
       const place = pc.place;
       const car = pc.car;
-      const carIdentify = `${car.name.split(" ").join("-")}-${car.id}`
-      const placeWrapper = $(`#${carIdentify} div[data-id-block="${place}"]`);
-      placeWrapper.html(Templante.newElementPeronnel(pc.personal));
+      const exists = DataCar.some(c => 
+        c.id === car.id &&
+        c.name === car.name
+      );
+
+      if(exists){
+        const carIdentify = `${car.name.split(" ").join("-")}-${car.id}`
+        const placeWrapper = $(`#${carIdentify} div[data-id-block="${place}"]`);
+        placeWrapper.html(Templante.newElementPeronnel(pc.personal));
+      }
     } 
   }
 };
