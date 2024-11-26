@@ -26,7 +26,7 @@
 
 <script>
     //upload
-  var data = [
+  var personal = [
     {
       id: 1,
       heure: "7h - 15h",
@@ -236,160 +236,37 @@
     },
   ];
 
-  var cars = [
+  var DataCar =  [
+    {id: 1, name: "Voiture 1", start : "Ankatso", end: "67ha" },
+    {id: 2, name: "Voiture 2", start : "Analakely", end: "Itaosy" },
+    {id: 3, name: "Voiture 3", start : "Analama", end: "Mahazo" },
+    {id: 4, name: "Voiture 4", start : "Mahazo", end: "Andavaka" },
+    {id: 5, name: "Voiture 5", start : "Andohalo", end: "Ankazo" },
+    {id: 6, name: "Voiture 6", start : "Andohalo", end: "Ankazo" },
+  ]
+  var personalCar = [
     {
-      id: 1,
-      name: "Voiture 1",
-      route: "Analakely - Mahazo",
-      data: [
-        { place: "c", personale: { id: 1, heure: "7h - 15h", name: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "16" } },
-        { place: "p1", personale: ""},
-        { place: "p2", personale: ""},
-        { place: "p3", personale: "" },
-        { place: "p4", personale: "" },
-        { place: "p5", personale: "" },
-        { place: "p6", personale: "" },
-        { place: "p7", personale: "" },
-        { place: "p8", personale: "" },
-        { place: "p9", personale: "" },
-        { place: "p10", personale: "" },
-        { place: "p11", personale: "" },
-        { place: "p12", personale: "" },
-        { place: "p13", personale: "" },
-        { place: "p14", personale: "" },
-        { place: "p15", personale: "" },
-        { place: "p16", personale: "" },
-        { place: "p17", personale: "" },
-        { place: "p18", personale: "" },
-        { place: "p19", personale: "" },
-        { place: "p20", personale: "" },
-        { place: "p21", personale: "" },
-        { place: "p22", personale: "" }
-      ]
+        car: {id: 1, name: "Voiture 1", start : "Ankatso", end: "67ha" },
+        place: "p5",
+        personal: {id: 1, heure: "7h - 15h", name: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106"},
     },
     {
-      id: 2,
-      name: "Voiture 2",
-      route: "Itaosy - Analakely",
-      data: [
-        { place: "c", personale: { id: 2, heure: "7h - 15h", name: "Rojo", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106" } },
-        { place: "p1", personale: { id: 20, heure: "10h - 16h", name: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue", contact: "0341234567", point: "106" } },
-        { place: "p2", personale: "" },
-        { place: "p3", personale: "" },
-        { place: "p4", personale: "" },
-        { place: "p5", personale: "" },
-        { place: "p6", personale: "" },
-        { place: "p7", personale: "" },
-        { place: "p8", personale: "" },
-        { place: "p9", personale: "" },
-        { place: "p10", personale: "" },
-        { place: "p11", personale: "" },
-        { place: "p12", personale: "" },
-        { place: "p13", personale: "" },
-        { place: "p14", personale: "" },
-        { place: "p15", personale: "" },
-        { place: "p16", personale: "" },
-        { place: "p17", personale: "" },
-        { place: "p18", personale: "" },
-        { place: "p19", personale: "" },
-        { place: "p20", personale: "" },
-        { place: "p21", personale: "" },
-        { place: "p22", personale: "" }
-      ]
+        car: {id: 1, name: "Voiture 1", start : "Ankatso", end: "67ha" },
+        place: "p6",
+        personal: {id: 1, heure: "7h - 15h", name: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106"},
     },
     {
-      id: 3,
-      name: "Voiture 3",
-      route: "Anosy - Ankatso",
-      data: [
-        { place: "c", personale: { id: 3, heure: "7h - 15h", name: "Toma", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106" } },
-        { place: "p1", personale: { id: 20, heure: "10h - 16h", name: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue", contact: "0341234567", point: "106" } },
-        { place: "p2", personale: "" },
-        { place: "p3", personale: "" },
-        { place: "p4", personale: "" },
-        { place: "p5", personale: "" },
-        { place: "p6", personale: "" },
-        { place: "p7", personale: "" },
-        { place: "p8", personale: "" },
-        { place: "p9", personale: "" },
-        { place: "p10", personale: "" },
-        { place: "p11", personale: "" },
-        { place: "p12", personale: "" },
-        { place: "p13", personale: "" },
-        { place: "p14", personale: "" },
-        { place: "p15", personale: "" },
-        { place: "p16", personale: "" },
-        { place: "p17", personale: "" },
-        { place: "p18", personale: "" },
-        { place: "p19", personale: "" },
-        { place: "p20", personale: "" },
-        { place: "p21", personale: "" },
-        { place: "p22", personale: "" }
-      ]
+        car: {id: 1, name: "Voiture 1", start : "Ankatso", end: "67ha" },
+        place: "p8",
+        personal: {id: 1, heure: "7h - 15h", name: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106"},
     },
     {
-      id: 4,
-      name: "Voiture 4",
-      route: "Anosy - Ankatso",
-      data: [
-        { place: "c", personale: { id: 3, heure: "7h - 15h", name: "Toma", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106" } },
-        { place: "p1", personale: { id: 20, heure: "10h - 16h", name: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue", contact: "0341234567", point: "106" } },
-        { place: "p2", personale: "" },
-        { place: "p3", personale: "" },
-        { place: "p4", personale: "" },
-        { place: "p5", personale: "" },
-        { place: "p6", personale: "" },
-        { place: "p7", personale: "" },
-        { place: "p8", personale: "" },
-        { place: "p9", personale: "" },
-        { place: "p10", personale: "" },
-        { place: "p11", personale: "" },
-        { place: "p12", personale: "" },
-        { place: "p13", personale: "" },
-        { place: "p14", personale: "" },
-        { place: "p15", personale: "" },
-        { place: "p16", personale: "" },
-        { place: "p17", personale: "" },
-        { place: "p18", personale: "" },
-        { place: "p19", personale: "" },
-        { place: "p20", personale: "" },
-        { place: "p21", personale: "" },
-        { place: "p22", personale: "" }
-      ]
+        car: {id: 1, name: "Voiture 1", start : "Ankatso", end: "67ha" },
+        place: "p10",
+        personal: {id: 1, heure: "7h - 15h", name: "Ando", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106"},
     },
-    {
-      id: 5,
-      name: "Voiture 5",
-      route: "Anosy - Ankatso",
-      data: [
-        { place: "c", personale: { id: 3, heure: "7h - 15h", name: "Toma", hotel: "Carlton", adresse: "23 rue de l'Indépendance", contact: "0345678901", point: "106" } },
-        { place: "p1", personale: { id: 20, heure: "10h - 16h", name: "Kanto", hotel: "Les 3 Métis", adresse: "7 avenue", contact: "0341234567", point: "106" } },
-        { place: "p2", personale: "" },
-        { place: "p3", personale: "" },
-        { place: "p4", personale: "" },
-        { place: "p5", personale: "" },
-        { place: "p6", personale: "" },
-        { place: "p7", personale: "" },
-        { place: "p8", personale: "" },
-        { place: "p9", personale: "" },
-        { place: "p10", personale: "" },
-        { place: "p11", personale: "" },
-        { place: "p12", personale: "" },
-        { place: "p13", personale: "" },
-        { place: "p14", personale: "" },
-        { place: "p15", personale: "" },
-        { place: "p16", personale: "" },
-        { place: "p17", personale: "" },
-        { place: "p18", personale: "" },
-        { place: "p19", personale: "" },
-        { place: "p20", personale: "" },
-        { place: "p21", personale: "" },
-        { place: "p22", personale: "" }
-      ]
-    },
-    // Répéter de la même manière pour les voitures 4 à 6
   ];
-  
+
 </script>
 
 <body class="position-relative gestion" style="height: 100vh; background:#F4F9FD;">

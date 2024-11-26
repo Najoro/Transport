@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
   Evenement.lineTabs();
 
@@ -5,20 +7,23 @@ $(document).ready(function () {
   Menu.showTextMenu();
 
   File.upload();
-  
+ 
+
   if($('body').hasClass('gestion')){
     
     Car.active();
-    Car.dynamicHeader(cars);
-    Car.dynamicContent(cars);
+    // Car.dynamicHeader(cars);
+    // Car.dynamicContent(cars);
+    Car.dynamic(DataCar,personalCar);
+    Car.generatePersonalCar(personalCar);
     Car.carousel();
     
-    Personnel.autoGenerate(data);
-    Personnel.addManual(cars);
-    Personnel.autoDistribution(data,cars);
-    Personnel.addIfChecked(data, cars);
-    Personnel.generateTable(data);
-    Personnel.saveDataCar(cars);
+    Personnel.autoGenerate(personal);
+    Personnel.addManual(DataCar,personalCar);
+    Personnel.autoDistribution(personal,DataCar,personalCar);
+    Personnel.addIfChecked(personal, DataCar,personalCar);
+    Personnel.generateTable(personal);
+    Personnel.saveDataCar(personalCar, DataCar);
   }
 });
 
@@ -118,9 +123,11 @@ const Personnel = {
     
   },
 
-  addManual: function (cars) {
+  addManual: function (DataCar,personalCar) {
     $("body").on("click", ".card-add-personel", function () {
-      $this = $(this);
+      $this = $(this);  
+      
+      
       let newElement = {};
       const target = $this.data("target");
       const $table = $("#table-list-personnel");
@@ -131,14 +138,23 @@ const Personnel = {
         newElement = row;
 
         $(".add-maual-personnel").on("click", function () {
+          const car = DataCar.find(item => item.id == $this.data('car-id'));
+          const place = $this.data('id-block');
+
           if ($this.hasClass("is-driver")) {
             $this.html(Templante.newElementDriver(newElement));
           } else {
             $this.html(Templante.newElementPeronnel(newElement));
           }
 
-          $(target).modal("hide");
+          personalCar.push({
+            car : car,
+            place : place,
+            personal : newElement,
+          });
 
+          $(target).modal("hide");          
+          
           const index = $("#table-personnel")
             .bootstrapTable("getData")
             .indexOf(row);
@@ -148,19 +164,7 @@ const Personnel = {
     });
   },
 
-  /**
-   * Recuperer tous les element checked
-   *    recuperer l'id de tous les element checked
-   *    
-   * 
-   * ajouter dans le "cars" choisie | Afficher dans le "cars" choisie
-   *      si je click sur l'element "Repartition automatique"
-   *          une popUp apparait -> choix du voiture (select)
-   *          Si je valide : les personnel ajout automatiquement dans le contenue du "voitire" choisie
-   *          sinon en enleve le popup
-   */
-
-  autoDistribution: function (data, cars) {
+  autoDistribution: function (listPersonel, cars, personalCar) {
     var PersonnelSelected = [];
     $("body").on("change","#personel-list input[type='checkbox']", function () {
       var checked = $("#personel-list input[type='checkbox']:checked")      
@@ -168,7 +172,7 @@ const Personnel = {
 
       checked.each(function() {
         var dataId = $(this).closest('tr').find('.card-personnel').data('id');
-        const personnel = data.find(item => item.id == dataId);
+        const personnel = listPersonel.find(item => item.id == dataId);
         if(personnel != undefined){
           PersonnelSelected.push(personnel);
         }
@@ -203,6 +207,7 @@ const Personnel = {
         onContentReady: function () {
           $("#carSelect").change(function () {
             carIdentify = $(this).val();
+            
             carId = $(this).find(":selected").data("id");
           });
         },
@@ -211,22 +216,25 @@ const Personnel = {
             text: "oui",
             btnClass: "btn-primary",
             action: function () {
-              currentCar = cars.find((item) => item.id === carId);  
-              
+              currentCar = cars.find((item) => item.id === carId);              
               for (const [index,personnel] of PersonnelSelected.entries()) {
-                var place =`p${index + 1}`;
-                var personnalCar = currentCar.data.find(item => item.place == place);
-                if(personnalCar){
-                  personnalCar.personale = personnel; 
-                  const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
-                  placeWrapper.html(Templante.newElementPeronnel(personnel));
+                if(index > 21) {
+                  break;
                 }
-              }
+                var place =`p${index + 1}`;                
+                const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
+                placeWrapper.html(Templante.newElementPeronnel(personnel));
 
+                personalCar.push({
+                  car : currentCar,
+                  place : place,
+                  personal : personnel,
+                })
+              }              
               $.alert({
                 title : "SUCCESS",
                 content: "importation reussie",
-                autoClose: "cancel|2000",
+                autoClose: "cancel|1000",
                 buttons: {
                   cancel:{
                     text: "ok",
@@ -246,11 +254,12 @@ const Personnel = {
           },
         },
       });
+
     });
   },
 
 
-  saveDataCar: function(cars){
+  saveDataCar: function(personalCar, DataCar){
     $('body').on('click', '#save-data-car', function() {
       const url = $(this).data('url');
       
@@ -258,7 +267,8 @@ const Personnel = {
         url : url,
         type: "GET",
         data: {
-          cars : cars,
+          cars : DataCar,
+          personalCar: personalCar,
         },
         success: function() {
           $.alert({
@@ -292,7 +302,7 @@ const Personnel = {
     })
   },
 
-  addIfChecked: function (dataPersonnel, cars) {
+  addIfChecked: function (dataPersonnel, cars, personalCar) {
     $table = $("#table-personnel");
 
     $table.on("check.bs.table", function (e, row, $element) {
@@ -358,15 +368,15 @@ const Personnel = {
                   type: "red",
                 })
               }else{
-              currentCar = cars.find((item) => item.id === carId);
-              currentCar.data.forEach(item => {
-                if(item.place == place){
-                  item.personale = personnelInsert;
-                }
-              })            
-              const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
-              placeWrapper.html(Templante.newElementPeronnel(personnelInsert));
-              $table.bootstrapTable("uncheck", index);
+                currentCar = cars.find((item) => item.id === carId);
+                const placeWrapper = $(`${carIdentify} div[data-id-block="${place}"]`);
+                placeWrapper.html(Templante.newElementPeronnel(personnelInsert));
+                personalCar.push({
+                  car : currentCar,
+                  place : place,
+                  personal : personnelInsert,
+                })         
+                $table.bootstrapTable("uncheck", index);
             }
 
             },
@@ -439,10 +449,10 @@ const Car = {
     });
   },
 
-  dynamicHeader: function (cars) {
+  dynamic : function(DataCar) {
     const $cars = $("#cars");
-
-    cars.forEach((car, index) => {
+    const $carContent = $("#cars-contents");
+    DataCar.forEach((car, index) => {
       var active = "";
       var activeCar = "";
       var selected = false;
@@ -463,55 +473,52 @@ const Car = {
               role="tab" aria-controls="v-pills-${identify}" aria-selected="${selected}">
               <div class="p-2 px-3 rounded-5 card-car text-dark ${activeCar}"
                   style="background: #F4F9FD;">
-                  <h4 class="m-0">${car.name}</h4>
-                  <p>${car.route}</p>
+                  <h4 class="m-0">${car.name}</h4>  
+                  <p>${car.start} -  ${car.end}</p>
               </div>
           </button>
 
       </div>`);
     });
-  },
 
-  dynamicContent: function (cars) {
-    const $carContent = $("#cars-contents");
-    cars.forEach((car, index) => {
-      var data = car.data;
-      var defaulteTemplante = "";
-      var TemplanteDriver = "";
+    //content
+    DataCar.forEach((car, index) => {
       var showContent = index == 0 ? "show active" : "";
       const identify = `${car.name.split(" ").join("-")}-${car.id}`;
-
-      data.forEach((element) => {
-        if (element.place == "c") {
-          TemplanteDriver =
-            element.personale == ""
-              ? Templante.defaultDriver(element) : Templante.driver(element);
-        } else {
-          defaulteTemplante +=
-            element.personale == ""
-              ? Templante.default(element)
-              : Templante.personel(element);
-        }
-      });
+      var PlaceDefault = '';
+      for (let i = 1; i <= 22 ; i++) {
+        const place = `p${i}`;
+        PlaceDefault += Templante.default(car,place);
+      }
 
       $carContent.append(`
         <!-- Contenu Voiture 1 -->
         <div class="tab-pane fade ${showContent} car-content" id="v-pills-${identify}" role="tabpanel" aria-labelledby="v-pills-${identify}-tab">
             <div class="row" id="${identify}" data-car-id="${car.id}">
-              ${TemplanteDriver}
-              ${defaulteTemplante}
+              ${Templante.defaultDriver(car,place="c")}
+              ${PlaceDefault}
             </div>
         </div>  
       `);
     });
   },
+
+  generatePersonalCar : function(personalCar) {
+    for (const [index,pc] of personalCar.entries()) {
+      const place = pc.place;
+      const car = pc.car;
+      const carIdentify = `${car.name.split(" ").join("-")}-${car.id}`
+      const placeWrapper = $(`#${carIdentify} div[data-id-block="${place}"]`);
+      placeWrapper.html(Templante.newElementPeronnel(pc.personal));
+    } 
+  }
 };
 
 const Templante = {
-  default: function (data) {
+  default: function (car, place) {
     const html = `
       <div class="col-12 col-md-3 mb-3 card-add-personel " data-toggle="modal"
-          data-target="#add-personel" data-id-block="${data.place}">
+          data-target="#add-personel" data-id-block="${place}" data-car-id="${car.id}">
           
           <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
             style="min-height: 140px;  border-style:dashed;">
@@ -600,10 +607,10 @@ const Templante = {
       </div>`;
     return html;
   },
-  defaultDriver: function (data) {
+  defaultDriver: function (car,place="c") {
     const html = `
      <div class="col-12 col-md-6 mb-3 card-add-personel is-driver" data-toggle="modal"
-          data-target="#add-personel" data-id-block="${data.place}">
+          data-target="#add-personel" data-id-block="${place}" data-car-id="${car.id}">
           
           <div class=" card rounded-4 p-3 w-100 d-flex justify-content-center align-items-center border-2 bg-transparent"
             style="min-height: 140px;  border-style:dashed;">
